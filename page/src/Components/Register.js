@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import {Container, Box, Button, Heading, Text, TextField} from 'gestalt'
+import Form from 'react-bootstrap/Form'
+import  Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 export class Register extends Component {
   state = {
@@ -13,58 +15,60 @@ export class Register extends Component {
   }
   render() {
     return (
+      <div className="body">
       <div className="box">
-        <Container>
-          <Box dangerouslySetInlineStyle={{
-            __style: {
-              backgroundcolor:'#ebe2da'
-            }
-          }}
-          margin={4}
-          padding={4}
-          shape="rounded"
-          display='flex'
-          justifyContent='center'
-          >
-            {/*Sign up Form */}
-            <form style={{
-              display: 'inlineBlock',
-              textAlign: 'center',
-              maxWidth: 450
-            }}>
-              <Box
-              marginBottom={2}
-              display='flex'
-              direction='column'
-              alignItems='center'>
-                <Heading color='midninght'>Let's Get Started</Heading>
-                <Text italic color='orchid'>Signup!</Text>
-              </Box>
-              {/* Username input*/}
-              <TextField id='username'
-              type='text'
-              name= 'username'
-              placeholder='Username'
-              onChange={this.handleChange}/>
-              {/* email input*/}
-              <TextField id='email'
-              type='email'
-              name= 'email'
-              placeholder='Email Address'
-              onChange={this.handleChange}/>
-              {/* password input*/}
-              <TextField id='password'
-              type='password'
-              name= 'password'
-              placeholder='Password'
-              onChange={this.handleChange}/>
-              <Button color='blue'
-              text='Submit'
-              type='submit'/>
-            </form>
-          </Box>
-        </Container>
-      </div>
+        <Form className="form-box">
+          <Form.Row>
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+          </Form.Row>
+
+          <Form.Group controlId="formGridAddress1">
+            <Form.Label>Address</Form.Label>
+            <Form.Control placeholder="1234 Main St" />
+          </Form.Group>
+
+          <Form.Group controlId="formGridAddress2">
+            <Form.Label>Address 2</Form.Label>
+            <Form.Control placeholder="Apartment, studio, or floor" />
+          </Form.Group>
+
+          <Form.Row>
+            <Form.Group as={Col} controlId="formGridCity">
+              <Form.Label>City</Form.Label>
+              <Form.Control />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridState">
+              <Form.Label>State</Form.Label>
+              <Form.Control as="select" defaultValue="Choose...">
+                <option>Choose...</option>
+                <option>...</option>
+              </Form.Control>
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridZip">
+              <Form.Label>Zip</Form.Label>
+              <Form.Control />
+            </Form.Group>
+          </Form.Row>
+
+          <Form.Group id="formGridCheckbox">
+            <Form.Check type="checkbox" label="Check me out" />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div></div>
     )
   }
 }
