@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #e2dddd;
+  background-image: url('./Components/Asset/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  background-color: white;
+  text-align: center;
+  margin: 100px;
+}

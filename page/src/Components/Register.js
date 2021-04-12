@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
-import {Container, Box, Button, Heading, Text, Textfield, TextField} from 'gestalt'
+import {Container, Box, Button, Heading, Text, TextField} from 'gestalt'
 
 export class Register extends Component {
+  state = {
+    name:'',
+    email:'',
+    password: ''
+  }
+  handleChange = ({event, value})=>{
+    event.persist();
+    this.setState({[event.target.name]: value})
+  }
   render() {
     return (
-      <div>
+      <div className="box">
         <Container>
           <Box dangerouslySetInlineStyle={{
             __style: {
@@ -49,7 +58,7 @@ export class Register extends Component {
               name= 'password'
               placeholder='Password'
               onChange={this.handleChange}/>
-              <Button inline color='blue'
+              <Button color='blue'
               text='Submit'
               type='submit'/>
             </form>
