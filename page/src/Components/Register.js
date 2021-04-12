@@ -4,15 +4,6 @@ import  Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
 export class Register extends Component {
-  state = {
-    name:'',
-    email:'',
-    password: ''
-  }
-  handleChange = ({event, value})=>{
-    event.persist();
-    this.setState({[event.target.name]: value})
-  }
   render() {
     return (
       <div className="body">
